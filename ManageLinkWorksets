@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Link Worksheets - Documentation</title>
+    <style>
+        /* Base styles matching the dark theme */
+        body {
+            background-color: #121212;
+            color: #d1d1d1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        /* Header layout styling */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+        }
+
+        .title-area h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin: 0 0 8px 0;
+        }
+
+        .title-area p {
+            color: #aaaaaa;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* Fallback icon styling matching the screenshot placeholder */
+        .plugin-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #888888;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #555555;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1a1a1a;
+        }
+
+        /* Content grid layout splitting main text and additional features */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 60px;
+        }
+
+        /* Section header styling matching the red text in the screenshot */
+        h2 {
+            color: #ff4d4d;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 30px 0 10px 0;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin: 0 0 20px 0;
+            font-size: 1rem;
+        }
+
+        /* Ordered list styling for the guide steps */
+        ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        /* Responsive layout for smaller monitors or windows */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section containing Title and Icon -->
+    <div class="header-container">
+        <div class="title-area">
+            <h1>Manage Link Worksheets</h1>
+            <p>Optimize Linked File Performance</p>
+        </div>
+        
+        <!-- Replace the icon-box content with an <img> tag if you have a physical icon image -->
+        <div class="plugin-icon">
+            <div class="icon-box">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 9h18M9 21V9" />
+                </svg>
+            </div>
+            Manage Link<br>Worksheets
+        </div>
+    </div>
+
+    <!-- Main Content Area split into columns -->
+    <div class="content-grid">
+        
+        <!-- Left Column: Core Tool Behavior -->
+        <div class="main-column">
+            <h2>What is it:</h2>
+            <p>This tool allows users to selectively close specific worksheets within linked Autodesk Revit files. Any link worksheets that remain unselected will automatically be opened, and any previously closed worksheets that were not selected during the current process will also be reopened.</p>
+
+            <h2>When to use it:</h2>
+            <p>Use this feature whenever you need to optimize complex models and heavily linked environments. It is highly effective for accelerating publishing workflows, such as exporting clean, lightweight views containing active links directly to Autodesk Construction Cloud (ACC) Forma and other cloud platforms.</p>
+
+            <h2>How to use it:</h2>
+            <ol>
+                <li>Click the "Manage Link Worksheets" button in the Revit ribbon.</li>
+                <li>Select the target links from the active document tree view.</li>
+                <li>Check the boxes for the specific worksheets you wish to close.</li>
+                <li>Confirm your selections to process and update the link configurations.</li>
+            </ol>
+        </div>
+
+        <!-- Right Column: Contextual Modifiers and Actions -->
+        <div class="side-column">
+            <h2>Additional features:</h2>
+            <p><strong>Shift Mode:</strong> Hold down the <strong>Shift</strong> key while clicking the tool button to automatically trigger an override that opens all worksheets for the currently selected links, saving you from manual layout adjustments.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
