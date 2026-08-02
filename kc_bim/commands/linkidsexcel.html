@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link IDs Excel - Documentation</title>
+    <style>
+        body { background-color: #121212; color: #d1d1d1; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 40px; line-height: 1.6; }
+        .header-container { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #2a2a2a; padding-bottom: 25px; margin-bottom: 40px; }
+        .title-area h1 { color: #ffffff; font-size: 2.2rem; font-weight: 500; margin: 0 0 8px 0; }
+        .title-area p { color: #aaaaaa; font-style: italic; font-size: 1.1rem; margin: 0; max-width: 850px; }
+        .breadcrumb { color: #888888; font-size: 0.9rem; margin-bottom: 10px; }
+        .breadcrumb a { color: #ff7777; text-decoration: none; }
+        .plugin-icon { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #888888; font-size: 0.8rem; text-align: center; min-width: 86px; }
+        .icon-box { width: 60px; height: 60px; border: 2px solid #555555; border-radius: 4px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; background-color: #1a1a1a; overflow: hidden; }
+        .icon-letter { color: #ffffff; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; }
+        .content-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; }
+        h2 { color: #ff4d4d; font-size: 1.25rem; font-weight: 500; margin: 30px 0 10px 0; }
+        h2:first-of-type { margin-top: 0; }
+        h3 { color: #ffffff; font-size: 1.05rem; font-weight: 500; margin: 22px 0 8px 0; }
+        p { margin: 0 0 20px 0; font-size: 1rem; }
+        ul, ol { margin: 0 0 20px 0; padding-left: 22px; }
+        li { margin-bottom: 8px; font-size: 1rem; }
+        strong { color: #ffffff; font-weight: 600; }
+        code { background-color: #1f1f1f; color: #ffffff; border: 1px solid #333333; border-radius: 3px; padding: 2px 5px; font-family: Consolas, 'Courier New', monospace; font-size: 0.92rem; }
+        a { color: #ff7777; }
+        .callout { background-color: #1a1a1a; border-left: 3px solid #ff4d4d; padding: 14px 16px; margin: 0 0 22px 0; }
+        .callout p { margin-bottom: 0; }
+        .mini-card { background-color: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 4px; padding: 16px; margin-bottom: 18px; }
+        .mini-card h3 { margin-top: 0; }
+        .mini-card p:last-child, .mini-card ul:last-child, .mini-card ol:last-child { margin-bottom: 0; }
+        .step-list { counter-reset: step-counter; list-style: none; padding-left: 0; }
+        .step-list li { counter-increment: step-counter; background-color: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 4px; padding: 14px 16px 14px 48px; margin-bottom: 12px; position: relative; }
+        .step-list li::before { content: counter(step-counter); position: absolute; left: 16px; top: 14px; width: 22px; height: 22px; background-color: #ff4d4d; color: #ffffff; border-radius: 50%; font-size: 0.82rem; line-height: 22px; text-align: center; font-weight: 600; }
+        .muted { color: #aaaaaa; }
+        .meta { color: #888888; font-size: 0.9rem; }
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+        .command-list { list-style: none; padding-left: 0; }
+        .command-list li { margin-bottom: 10px; }
+        @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; gap: 30px; } body { padding: 20px; } .header-container { gap: 24px; } }
+</style>
+</head>
+<body>
+    <div class="breadcrumb"><a href="../index.html">KC Tools Documentation</a> / ModLinks</div>
+    <div class="header-container">
+        <div class="title-area">
+            <h1>Link IDs Excel</h1>
+            <p>Exports all link Ids and names to the template!</p>
+            <p class="meta">Source command: <code>ModLinks_LinkIdsExcel</code></p>
+        </div>
+        <div class="plugin-icon">
+            <div class="icon-box"><div class="icon-letter">LI</div></div>
+            Link<br>IDs Excel
+        </div>
+    </div>
+    <div class="content-grid">
+        <div class="main-column">
+            <h2>What this tool does:</h2>
+            <p>Exports all link Ids and names to the template! Saves a template for entering link information. After executing this command, click on the bubble message in Revit to open the file!</p>
+
+            <h2>How to use the tool:</h2>
+            <ol class="step-list"><li>The current document is a project</li></ol>
+
+            <h2>Best use case:</h2>
+            <div class="callout"><p>Use <strong>Link IDs Excel</strong> when you need the workflow described above and want a faster, repeatable command instead of manually processing the same Revit task.</p></div>
+        </div>
+        <div class="side-column">
+            <h2>Additional features:</h2>
+            <div class="mini-card"><h3>Shift Mode</h3><p><strong>Shift + Click:</strong> Launch the command with this modifier key for an alternate mode.</p></div>
+
+            <h2>Notes and requirements:</h2>
+            <div class="mini-card"><p>Condition(s) to run:</p></div>
+
+            <h2>Command reference:</h2>
+            <div class="mini-card">
+                <p><strong>Category:</strong> ModLinks</p>
+                <p><strong>Command name:</strong> <code>LinkIdsExcel</code></p>
+                <p><strong>Full source name:</strong> <code>ModLinks_LinkIdsExcel</code></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
