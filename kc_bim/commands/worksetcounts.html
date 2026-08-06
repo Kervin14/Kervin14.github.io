@@ -17,7 +17,6 @@
         .content-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; }
         h2 { color: #ff4d4d; font-size: 1.25rem; font-weight: 500; margin: 30px 0 10px 0; }
         h2:first-of-type { margin-top: 0; }
-        h3 { color: #ffffff; font-size: 1.05rem; font-weight: 500; margin: 22px 0 8px 0; }
         p { margin: 0 0 20px 0; font-size: 1rem; }
         ul, ol { margin: 0 0 20px 0; padding-left: 22px; }
         li { margin-bottom: 8px; font-size: 1rem; }
@@ -25,86 +24,64 @@
         code { background-color: #1f1f1f; color: #ffffff; border: 1px solid #333333; border-radius: 3px; padding: 2px 5px; font-family: Consolas, 'Courier New', monospace; font-size: 0.92rem; }
         a { color: #ff7777; }
         .callout { background-color: #1a1a1a; border-left: 3px solid #ff4d4d; padding: 14px 16px; margin: 0 0 22px 0; }
-        .callout p { margin-bottom: 0; }
         .mini-card { background-color: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 4px; padding: 16px; margin-bottom: 18px; }
-        .mini-card h3 { margin-top: 0; }
-        .mini-card p:last-child, .mini-card ul:last-child, .mini-card ol:last-child { margin-bottom: 0; }
+        .meta { color: #888888; font-size: 0.9rem; }
         .step-list { counter-reset: step-counter; list-style: none; padding-left: 0; }
         .step-list li { counter-increment: step-counter; background-color: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 4px; padding: 14px 16px 14px 48px; margin-bottom: 12px; position: relative; }
         .step-list li::before { content: counter(step-counter); position: absolute; left: 16px; top: 14px; width: 22px; height: 22px; background-color: #ff4d4d; color: #ffffff; border-radius: 50%; font-size: 0.82rem; line-height: 22px; text-align: center; font-weight: 600; }
         .muted { color: #aaaaaa; }
-        .meta { color: #888888; font-size: 0.9rem; }
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-        .command-list { list-style: none; padding-left: 0; }
-        .command-list li { margin-bottom: 10px; }
-        .requirement { background-color: #1f2f2f; border-left: 3px solid #4db8ff; padding: 14px 16px; margin: 0 0 22px 0; }
-        .requirement p { margin-bottom: 0; }
-        @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; gap: 30px; } body { padding: 20px; } .header-container { gap: 24px; } }
+        @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; gap: 30px; } body { padding: 20px; } }
     </style>
 </head>
 <body>
-    <div class="breadcrumb"><a href="../index.html">KC Tools Documentation</a> / Analysis</div>
+    <div class="breadcrumb"><a href="../index.html">KC Tools Documentation</a> / Analyze</div>
     <div class="header-container">
         <div class="title-area">
             <h1>Workset Counts</h1>
-            <p>Analyzes and displays element count by category for a selected workset</p>
-            <p class="meta">Source command: <code>Cmds_Analyze_WorksetCounts</code></p>
+            <p>Analyze category distribution in a selected workset, or hold Shift to find empty worksets.</p>
+            <p class="meta">Source command: <code>Cmd_WorksetCounts</code></p>
         </div>
         <div class="plugin-icon">
             <div class="icon-box"><div class="icon-letter">WC</div></div>
             Workset<br>Counts
         </div>
     </div>
+
     <div class="content-grid">
-        <div class="main-column">
-            <h2>What this tool does:</h2>
-            <p>Analyzes a selected workset and displays the total element count broken down by category. This is useful for understanding the composition and scale of elements within a specific workset in a workshared model.</p>
-
-            <h2>How to use the tool:</h2>
-            <ol class="step-list">
-            <li><strong>Start the command</strong><br>Click the Workset Counts button in the Revit ribbon.</li>
-            <li><strong>Select a workset</strong><br>A dialog will appear listing all available worksets. Select the workset you want to analyze.</li>
-            <li><strong>Wait for analysis</strong><br>A progress bar shows the analysis progress as the tool counts elements by category.</li>
-            <li><strong>Review the results</strong><br>A report window displays the total element count and a breakdown by category, sorted from highest to lowest count.</li>
-        </ol>
-
-            <h2>Best use case:</h2>
-            <div class="callout"><p>Use <strong>Workset Counts</strong> when you need to quickly understand the element distribution within a specific workset, diagnose workset imbalance, identify categories with excessive elements, or validate workset organization in a shared model.</p></div>
-
-            <h2>Output information:</h2>
-            <p>The tool displays:</p>
+        <div>
+            <h2>What this tool does</h2>
+            <p>Provides workset-level element analysis for BIM management workflows.</p>
             <ul>
-                <li><strong>Workset name:</strong> The name of the selected workset</li>
-                <li><strong>Total elements:</strong> Complete count of all elements in the workset</li>
-                <li><strong>Category count:</strong> Number of unique categories represented</li>
-                <li><strong>Category breakdown:</strong> Sorted list showing element count per category</li>
+                <li><strong>Normal mode:</strong> Select one workset and return element counts by category.</li>
+                <li><strong>Shift mode:</strong> Find user worksets with zero elements (excludes <code>Workset1</code>).</li>
             </ul>
+
+            <h2>How to use</h2>
+            <ol class="step-list">
+                <li><strong>Start command</strong><br>Click <strong>Workset Counts</strong> from the Analyze section.</li>
+                <li><strong>Choose mode</strong><br>Run normally for category counts, or hold <strong>Shift</strong> when launching to run empty-workset detection.</li>
+                <li><strong>Review output</strong><br>Read the completion dialog for counts and recommendations.</li>
+            </ol>
+
+            <h2>Safety logic</h2>
+            <div class="callout">
+                If the selected workset is large, the command estimates runtime and warns before continuing when likely to exceed ~2 minutes.
+            </div>
         </div>
-        <div class="side-column">
-            <h2>Requirements:</h2>
-            <div class="requirement">
-                <p><strong>Workshared Model Required</strong><br>This command only works with workshared Revit models. It will fail if run on a non-workshared document.</p>
+
+        <div>
+            <h2>Notes</h2>
+            <div class="mini-card">
+                <p><strong>Requires workshared model.</strong></p>
+                <p>Empty-workset scan intentionally excludes <code>Workset1</code> (default workset).</p>
+                <p>Progress is shown using the internal progress coordinator and can be cancelled.</p>
             </div>
 
-            <h2>Notes and tips:</h2>
+            <h2>Command reference</h2>
             <div class="mini-card">
-                <h3>Performance</h3>
-                <p>Analysis speed depends on the total element count. Large worksets with thousands of elements may take a few moments to process.</p>
-            </div>
-            <div class="mini-card">
-                <h3>Cancellation</h3>
-                <p>You can cancel the analysis at any time by clicking the Cancel button on the progress bar.</p>
-            </div>
-            <div class="mini-card">
-                <h3>No Categories</h3>
-                <p>Elements without an assigned category will be grouped under <code>&lt;No Category&gt;</code> in the results.</p>
-            </div>
-
-            <h2>Command reference:</h2>
-            <div class="mini-card">
-                <p><strong>Category:</strong> Analysis</p>
-                <p><strong>Command name:</strong> <code>WorksetCounts</code></p>
-                <p><strong>Full source name:</strong> <code>Cmds_Analyze_WorksetCounts</code></p>
+                <p><strong>Category:</strong> Analyze</p>
+                <p><strong>Command:</strong> <code>WorksetCounts</code></p>
+                <p><strong>Class:</strong> <code>KC_BIM.Cmds_Analyze.Cmd_WorksetCounts</code></p>
             </div>
         </div>
     </div>
