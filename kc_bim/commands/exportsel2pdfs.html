@@ -45,7 +45,7 @@
     <div class="header-container">
         <div class="title-area">
             <h1>Export Selected to Individual PDFs</h1>
-            <p>Exports selected sheets from Revit to PDF (single sheets). Sheets can be pre-selected in the project browser</p>
+            <p>Exports selected sheets from Revit to PDF (single sheets). Use BlackLine color by default. Sheets can be pre-selected in the project browser</p>
             <p class="meta">Source command: <code>Export_ExportSel2PDFs</code></p>
         </div>
         <div class="plugin-icon">
@@ -56,7 +56,7 @@
     <div class="content-grid">
         <div class="main-column">
             <h2>What this tool does:</h2>
-            <p>Exports selected sheets from Revit to PDF (single sheets). Sheets can be pre-selected in the project browser The tool will apply this naming rule to PDF files: SheetNumber_SheetName. The built-in Pdf exporter is used for the exporting process, which automatically detects page sizes. Currently there is a known PDFExport bug where using special characters in text will not appear graphically correct on the PDF when using PDFExporter. Autodesk is already aware. Credit: GeeWiz (Gavin Crump) for the individual sheet export logic. 260702: Updated export PDF settings to match combined file command (ExportSEl2PDFc). Updated version and description. 260630: Bug: When exporting the print export settings don&#x27;t seem correct (backgrounds print full tone ie CAD (Moccasin Site Plan)). It must match the combined file command (ExportSEl2PDFc)</p>
+            <p>Exports selected sheets from Revit to PDF (single sheets). Use BlackLine color by default. Sheets can be pre-selected in the project browser The tool will apply this naming rule to PDF files: SheetNumber_SheetName. The built-in Pdf exporter is used for the exporting process, which automatically detects page sizes. Currently there is a known PDFExport bug where using special characters in text will not appear graphically correct on the PDF when using PDFExporter. Autodesk is already aware. Credit: GeeWiz (Gavin Crump) for the individual sheet export logic. 260702: Updated export PDF settings to match combined file command (ExportSEl2PDFc). Updated version and description. 260630: Bug: When exporting the print export settings don&#x27;t seem correct (backgrounds print full tone ie CAD (Moccasin Site Plan)). It must match the combined file command (ExportSEl2PDFc)</p>
 
             <h2>How to use the tool:</h2>
             <ol class="step-list">
@@ -70,7 +70,8 @@
         </div>
         <div class="side-column">
             <h2>Additional features:</h2>
-            <div class="mini-card"><h3>Shift Mode</h3><p><strong>Shift + Click:</strong> Shows crop boundaries (hidden by default).</p></div>
+            <div class="mini-card"><h3>Shift Mode</h3><p><strong>Shift + Click:</strong> Export in Color.</p></div>
+            <div class="mini-card"><h3>Control Mode</h3><p><strong>Control + Click:</strong> Export in Grayscale</p></div>            
 
             <h2>Notes and requirements:</h2>
             <div class="mini-card"><p>NOTE:</p></div>
